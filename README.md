@@ -2,7 +2,7 @@
 
 URL Safe Base64 util module for Node.js applications
 
-## Installation
+## Publish Steps
 
 - clone this repository
 
@@ -11,21 +11,20 @@ URL Safe Base64 util module for Node.js applications
 - build
 
 ```
-  wasm-pack build --target bundler
+  wasm-pack build --target bundler --scope honwhy
 ```
 
 - install package to global node_modules
 
 ```
-  cd pkg
-  npm link
+  wasm-pack login
+  wasm-pack publish
 ```
 
 - start web app
 
 ```
 cd webapp
-npm link urlsafe-base64
 npm install
 npm run dev -- --open
 ```
@@ -35,7 +34,7 @@ npm run dev -- --open
 Require it within your module:
 
 ``` javascript
-  import {encode, decode} from 'urlsafe-base64'
+  import {encode, decode} from '@honwhy/urlsafe-base64'
 ```
 
 ### .encode(string)
@@ -52,7 +51,7 @@ Decodes a URL Safe Base64 string as a string.
 
 ## Inspires by
 
-- [RGBboy/urlsafe-base64](http://travis-ci.org/RGBboy/urlsafe-base64)
+- [RGBboy/urlsafe-base64](http://github.com/RGBboy/urlsafe-base64)
 - [Compiling from Rust to WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm)
 
 MIT License
